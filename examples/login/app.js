@@ -3,8 +3,8 @@ var express = require('express')
   , util = require('util')
   , TripCaseStrategy = require('passport-tripcase').Strategy;
 
-var TRIPCASE_CLIENT_ID = "276377b4760427c1c2f89e8c876e62fd79c5490ba3594a24aa47cf65246c7f25"
-var TRIPCASE_CLIENT_SECRET = "3ee390aedba147ed11cb545425b1cd752f3acc6c110b81095929f1aef0855424";
+var TRIPCASE_CLIENT_ID = "--your_client_id--"
+var TRIPCASE_CLIENT_SECRET = "--your_client_secret--";
 
 
 // Passport session setup.
