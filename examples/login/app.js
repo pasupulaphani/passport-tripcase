@@ -6,7 +6,6 @@ var express = require('express')
 var TRIPCASE_CLIENT_ID = "--your_client_id--"
 var TRIPCASE_CLIENT_SECRET = "--your_client_secret--";
 
-
 // Passport session setup.
 //   To support persistent login sessions, Passport needs to be able to
 //   serialize users into and deserialize users out of the session.  Typically,
@@ -33,7 +32,7 @@ passport.use(new TripCaseStrategy({
     callbackURL: "https://airmax.herokuapp.com/auth/tripcase/callback",
     authorizationURL: 'https://dharma.tripcase.com/client_api_permissions',
     tokenURL: 'https://dharma.tripcase.com/developer_api/tokens',
-    userProfileURL: 'https://dharma.tripcase.com/developer_api/users',
+    userProfileURL: 'https://dharma.tripcase.com/developer_api/users/me.json',
     userAgent: 'airmax-api'
   },
   function(accessToken, refreshToken, profile, done) {
@@ -111,7 +110,7 @@ app.get('/logout', function(req, res){
   res.redirect('/');
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 
 
 // Simple route middleware to ensure user is authenticated.
