@@ -61,8 +61,6 @@ For a complete, working example, refer to the [login example](https://github.com
     $ npm install --dev
     $ make test
 
-[![Build Status](https://secure.travis-ci.org/pasupulaphani/passport-tripcase.png)](http://travis-ci.org/pasupulaphani/passport-tripcase)
-
 ## Credits
 
   - [pasupulaphani](http://github.com/pasupulaphani)
