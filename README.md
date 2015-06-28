@@ -3,9 +3,7 @@
 Authenticating with [TripCase](https://www.tripcase.com/)
 using the OAuth 2.0 API.
 
-This module lets you authenticate using TripCase in your Node.js applications.
-By plugging into Passport, TripCase authentication can be easily and
-unobtrusively integrated into any application or framework that supports
+Supports
 [Connect](http://www.senchalabs.org/connect/)-style middleware, including
 [Express](http://expressjs.com/).
 
@@ -15,12 +13,7 @@ unobtrusively integrated into any application or framework that supports
 
 ## Usage
 
-#### Configure Strategy
-
-The TripCase authentication strategy authenticates users using a TripCase account
-and OAuth 2.0 tokens.  The strategy requires a `verify` callback, which accepts
-these credentials and calls `done` providing a user, as well as `options`
-specifying a client ID, client secret, and callback URL.
+#### Configure
 
     passport.use(new TripCaseStrategy({
         clientID: TRIPCASE_CLIENT_ID,
@@ -32,6 +25,7 @@ specifying a client ID, client secret, and callback URL.
         userAgent: 'airmax-api'
       },
       function(accessToken, refreshToken, profile, done) {
+        // profile.id for tripcase is primary_email
         User.findOrCreate({ tripcaseId: profile.id }, function (err, user) {
           return done(err, user);
         });
