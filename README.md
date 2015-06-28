@@ -1,6 +1,6 @@
 # Passport-TripCase
 
-[Passport](http://passportjs.org/) strategy for authenticating with [TripCase](https://www.tripcase.com/)
+Authenticating with [TripCase](https://www.tripcase.com/)
 using the OAuth 2.0 API.
 
 This module lets you authenticate using TripCase in your Node.js applications.
