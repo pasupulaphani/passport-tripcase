@@ -25,7 +25,11 @@ specifying a client ID, client secret, and callback URL.
     passport.use(new TripCaseStrategy({
         clientID: TRIPCASE_CLIENT_ID,
         clientSecret: TRIPCASE_CLIENT_SECRET,
-        callbackURL: "http://127.0.0.1:3000/auth/tripcase/callback"
+        callbackURL: "http://127.0.0.1:3000/auth/tripcase/callback",
+        authorizationURL: 'https://www.tripcase.com/client_api_permissions',
+        tokenURL: 'https://www.tripcase.com/developer_api/tokens',
+        userProfileURL: 'https://www.tripcase.com/developer_api/users/me.json',
+        userAgent: 'airmax-api'
       },
       function(accessToken, refreshToken, profile, done) {
         User.findOrCreate({ tripcaseId: profile.id }, function (err, user) {
